@@ -8,7 +8,8 @@ function Reset({ setTime }) {
   );
 
   function reset() {
-    setTime({ min: 0, sec: 0 });
+    setTime(0);
+    
   }
 }
 export default Reset;

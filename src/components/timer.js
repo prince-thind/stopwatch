@@ -3,7 +3,7 @@ function Timer({ time }) {
 }
 
 function getTime(time) {
-  return zeroPad(time.min) + ':' + zeroPad(time.sec);
+  return zeroPad(convertToMin(time)) + ':' + zeroPad(convertToSec(time));
 
   function zeroPad(num) {
     num += '';
@@ -12,6 +12,17 @@ function getTime(time) {
     }
     return num;
   }
+
+  function convertToMin(time){
+    return Math.trunc(time/60);
+  }
+
+  function convertToSec(time){
+    return time%60;
+  }
+
+
+  
 }
 
 export default Timer;
