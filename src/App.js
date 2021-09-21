@@ -5,7 +5,7 @@ import TimeForm from './components/time-form';
 import Timer from './components/timer';
 
 function App() {
-  const [time, setTime] = useState(45);
+  const [time, setTime] = useState(0);
 
   useEffect(() => {
     const timerID = setTimeout(() => {
