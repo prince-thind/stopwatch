@@ -1,15 +1,15 @@
 function formatTime(time) {
-  const ms = ZeroPad(getMilliseconds(time));
-  const seconds = ZeroPad(getSeconds(time));
-  const minutes = ZeroPad(getMinutes(time));
+  const ms = ZeroPad(getMilliseconds(time), 3);
+  const seconds = ZeroPad(getSeconds(time), 2);
+  const minutes = ZeroPad(getMinutes(time), 2);
 
   return `${minutes}:${seconds}:${ms}`;
 }
 
-function ZeroPad(time) {
+function ZeroPad(time, number) {
   time += "";
-  if (time.length === 1) {
-    return "0" + time;
+  while (time.length < number) {
+    time = "0" + time;
   }
   return time;
 }
