@@ -1,27 +1,31 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Header from "./components/Header";
 import formatTime from "./lib/formatTime";
+import StartButton from "./lib/StartButton";
+import StopButton from "./lib/StopButton";
+import ResetButton from "./lib/ResetButton";
 
 function App() {
   const [time, setTime] = useState(0); //time in ms
-
-  useEffect(() => {
-    const timerID = setInterval(() => {
-      setTime((time) => time + 45);
-    }, 45);
-    return () => {
-      clearInterval(timerID);
-    };
-  }, []);
+  const [timerID, setTimerID] = useState(null);
 
   return (
     <div className="App">
       <Header />
       <div className="time">{formatTime(time)}</div>
       <div className="buttons">
-        <button className="button">Start</button>
-        <button className="button">Stop</button>
-        <button className="button">Reset</button>
+        <StartButton
+          setTime={setTime}
+          timerID={timerID}
+          setTimerID={setTimerID}
+        />
+        <StopButton
+          setTimerID={setTimerID}
+        />{" "}
+        <ResetButton
+          setTime={setTime}
+          setTimerID={setTimerID}
+        />
       </div>
     </div>
   );
