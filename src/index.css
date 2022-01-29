@@ -14,3 +14,26 @@ body {
 .icon {
   margin-right: 0.5rem;
 }
+.time{
+  padding:1rem;
+  font-size: 5rem;
+  border:1px solid gray;
+  background-color: hsl(120, 0%, 95%);
+  max-width: fit-content;
+  margin:1rem auto;
+  box-shadow: 0 0 5px 0 black;
+}
+.buttons{
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  width: 50%;
+  margin:auto;
+}
+.button{
+  padding:1rem;
+  font-size: 1.2rem;
+  flex:1;
+  box-shadow: 0 0 3px 0 black;
+
+}
