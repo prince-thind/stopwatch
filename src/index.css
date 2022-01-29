@@ -1,0 +1,16 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  text-align: center;
+}
+.heading {
+  background-color: hsl(120, 50%, 10%);
+  color: hsl(120, 0%, 80%);
+  padding: 0.5rem;
+}
+.icon {
+  margin-right: 0.5rem;
+}
