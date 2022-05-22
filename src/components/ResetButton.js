@@ -10,7 +10,7 @@ function ResetButton({ setTime, setTimerID }) {
       clearInterval(timerID);
       return null;
     });
-    setTime(0);
+    setTime(new Date(2000, 1, 1));
   }
 }
 

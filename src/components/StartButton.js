@@ -8,7 +8,11 @@ function StartButton({ setTime, timerID, setTimerID }) {
   function startTimer() {
     if (timerID != null) return;
     const ID = setInterval(() => {
-      setTime((time) => time + 45);
+      setTime((time) => {
+        const newTime=new Date(time);
+        newTime.setMilliseconds(newTime.getMilliseconds()+45);
+        return newTime;
+      });
     }, 45);
     setTimerID(ID);
   }

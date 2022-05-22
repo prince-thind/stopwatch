@@ -1,17 +1,17 @@
 import { useState } from "react";
 import Header from "./components/Header";
-import formatTime from "./lib/formatTime";
 import ResetButton from "./components/ResetButton";
+import Time from "./components/Time";
 import ControlButton from "./components/ControlButton";
 
 function App() {
-  const [time, setTime] = useState(0); //time in ms
+  const [time, setTime] = useState(new Date(2000,1,1));
   const [timerID, setTimerID] = useState(null);
 
   return (
     <div className="App">
       <Header />
-      <div className="time">{formatTime(time)}</div>
+      <Time time={time}/>
       <div className="buttons">
         <ControlButton
           timerID={timerID}
