@@ -1,9 +1,8 @@
 import { useState } from "react";
 import Header from "./components/Header";
 import formatTime from "./lib/formatTime";
-import StartButton from "./lib/StartButton";
-import StopButton from "./lib/StopButton";
-import ResetButton from "./lib/ResetButton";
+import ResetButton from "./components/ResetButton";
+import ControlButton from "./components/ControlButton";
 
 function App() {
   const [time, setTime] = useState(0); //time in ms
@@ -14,18 +13,12 @@ function App() {
       <Header />
       <div className="time">{formatTime(time)}</div>
       <div className="buttons">
-        <StartButton
-          setTime={setTime}
+        <ControlButton
           timerID={timerID}
           setTimerID={setTimerID}
-        />
-        <StopButton
-          setTimerID={setTimerID}
-        />{" "}
-        <ResetButton
           setTime={setTime}
-          setTimerID={setTimerID}
         />
+        <ResetButton setTime={setTime} setTimerID={setTimerID} />
       </div>
     </div>
   );
