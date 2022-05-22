@@ -36,6 +36,9 @@ body {
   flex: 1;
   box-shadow: 0 0 3px 0 black;
 }
+.button:hover {
+  cursor: pointer;
+}
 @media screen and (max-width: 760px) {
   .time {
     font-size: 2rem;
